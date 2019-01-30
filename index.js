@@ -1,7 +1,11 @@
+const publickKey = '';
+
+
 function issueNewToken(){
     fetch('https://ancient-headland-39950.herokuapp.com/api/newUser')
         .then(res => {
             if(res.ok) {
+                publicKey = res.publicKey;
                 console.log(res);
             } else {
                 throw Error(`Request rejected with status ${res.status}`);
