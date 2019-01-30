@@ -2,7 +2,7 @@ function issueNewToken(){
     fetch('https://ancient-headland-39950.herokuapp.com/api/newUser')
   .then(res => {
     if(res.ok) {
-      alert(res);
+      console.log(res);
     } else {
       throw Error(`Request rejected with status ${res.status}`);
     }
@@ -11,5 +11,5 @@ function issueNewToken(){
 }
 
 function checkBalance(publicKey){
-    
+
 }
