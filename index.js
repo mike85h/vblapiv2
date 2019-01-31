@@ -3,7 +3,7 @@ let publicKey = '';
 
 function issueNewToken(){
     //disable button after pressing.
-    document.getElementById("").disabled = true;
+    document.getElementById("issueNewToken").disabled = true;
     //fetch the generated keys.
     fetch('https://ancient-headland-39950.herokuapp.com/api/newUser')
         .then(res => { return res.json(); })
@@ -21,7 +21,7 @@ function checkBalance(publicKey){
     fetch(`https://ancient-headland-39950.herokuapp.com/api/getBalance/${publicKey}`)
         .then(res => { return res.json(); })
         .then(res => {
-            document.getElementById("showBalance").innerText = `The balance for account ${}: ${res.balance}`;
+            document.getElementById("showBalance").innerText = (`The balance for account ${publicKey}: ${res.balance}`);
         })
         .catch(console.error)
 }
