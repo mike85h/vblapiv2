@@ -21,7 +21,7 @@ function checkBalance(publicKey){
     fetch(`https://ancient-headland-39950.herokuapp.com/api/getBalance/${publicKey}`)
         .then(res => { return res.json(); })
         .then(res => {
-            document.getElementById("showBalance").innerText = res.balance;
+            document.getElementById("showBalance").innerText = `The balance for account ${}: ${res.balance}`;
         })
         .catch(console.error)
 }
