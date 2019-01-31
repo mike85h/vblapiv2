@@ -1,29 +1,27 @@
-const publickKey = '';
+let publicKey = '';
 
 
 function issueNewToken(){
+    //disable button after pressing.
+    document.getElementById("").disabled = true;
+    //fetch the generated keys.
     fetch('https://ancient-headland-39950.herokuapp.com/api/newUser')
+        .then(res => { return res.json(); })
         .then(res => {
-            if(res.ok) {
-                publicKey = res.publicKey;
-                console.log(res);
-            } else {
-                throw Error(`Request rejected with status ${res.status}`);
-                alert('Something went wrong. Please try again.');
-            }
+            //modify global variable for use in checkBalance().
+            publicKey = res.publicKey
+            //Show results in div.
+            document.getElementById("showToken").innerText = (`Account Created!
+                Your public key is: ${publicKey}`);
         })
         .catch(console.error)
 }
 
 function checkBalance(publicKey){
     fetch(`https://ancient-headland-39950.herokuapp.com/api/getBalance/${publicKey}`)
+        .then(res => { return res.json(); })
         .then(res => {
-            if(res) {
-                console.log(res);
-            } else {
-                throw Error(`Error: ${res}`)
-                alert('Something went wrong. Please try again.');
-            }
+            document.getElementById("showBalance").innerText = res.balance;
         })
         .catch(console.error)
 }
