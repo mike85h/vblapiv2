@@ -20,7 +20,6 @@ function issueNewToken(){
             document.getElementById("showToken").innerText = (`Account Created!
                 Your public key is: ${publicKey}`);
         })
-        .catch(console.error)
 }
 
 function checkBalance(publicKey){
@@ -30,5 +29,4 @@ function checkBalance(publicKey){
             console.log(res.Balance, res.Type);
             document.getElementById("showBalance").innerText = (`The balance for account ${publicKey}: ${res.Type}: ${res.Balance}`);
         })
-        .catch(console.error)
 }
