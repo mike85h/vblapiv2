@@ -27,6 +27,7 @@ main{
 
 button {
     margin-top: 5vh;
+    margin-bottom: 5vh;
     justify-content: flex-start;
     align-items: center;
     width: 10vw;
