@@ -2,7 +2,7 @@
 let publicKey = '';
 
 //Event Listeners:
-document.getElementById("showBalance").addEventListener('click', function(){
+document.getElementById("showBalanceButton").addEventListener('click', function(){
     checkBalance(publicKey);
 })
 
@@ -28,7 +28,7 @@ function checkBalance(publicKey){
         .then(res => { return res.json(); })
         .then(res => {
             console.log(res);
-            document.getElementById("showBalance").innerText = (`The balance for account ${publicKey}: ${res}`);
+            //document.getElementById("showBalance").innerText = (`The balance for account ${publicKey}: ${res}`);
         })
         .catch(console.error)
 }
