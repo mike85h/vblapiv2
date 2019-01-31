@@ -28,7 +28,7 @@ function checkBalance(publicKey){
         .then(res => { return res.json(); })
         .then(res => {
             console.log(res.Balance, res.Type);
-            //document.getElementById("showBalance").innerText = (`The balance for account ${publicKey}: ${res}`);
+            document.getElementById("showBalance").innerText = (`The balance for account ${publicKey}: ${res.Type}: ${res.Balance}`);
         })
         .catch(console.error)
 }
