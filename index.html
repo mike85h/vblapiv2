@@ -3,14 +3,17 @@
     <head>
         <meta charset="utf-8">
         <title>VBLD</title>
+        <link rel="stylesheet" href="./main.css" type="text/css">
+        <meta name=”viewport” content=”width=device-width, initial-scale=1″>
     </head>
     <body>
-        <button type="button" name="issueNewToken" id="issueNewToken" onclick="issueNewToken()">Issue Token</button>
-        <div id="showToken"></div>
-        <input type="text" name="pubKey" value="enter a public key to check balance">
-        <button type="button" name="showBalance" id="showBalanceButton">Show Balance</button>
-        <div id="showBalanceDiv"></div>
-
+        <main>
+            <button type="button" name="issueNewToken" id="issueNewToken" onclick="issueNewToken()">Issue Token</button>
+            <div id="showToken"></div>
+            <input type="text" name="pubKey" value="enter a public key to check balance">
+            <button type="button" name="showBalance" id="showBalanceButton">Show Balance</button>
+            <div id="showBalanceDiv"></div>
+        </main>
 
 <!--scripts-->
         <script type="text/javascript" src="./index.js"></script>

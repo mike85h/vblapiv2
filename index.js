@@ -27,6 +27,6 @@ function checkBalance(publicKey){
         .then(res => { return res.json(); })
         .then(res => {
             console.log(res.Balance, res.Type);
-            document.getElementById("showBalance").innerText = (`The balance for account ${publicKey}: ${res.Type}: ${res.Balance}`);
+            document.getElementById("showBalanceDiv").innerText = (`The balance for account ${publicKey}: ${res.Type ? 'XLM' : 'Other Currency'}: ${res.Balance}`);
         })
 }
