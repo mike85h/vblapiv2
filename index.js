@@ -1,6 +1,12 @@
+//Global Vars:
 let publicKey = '';
 
+//Event Listeners:
+document.getElementById("showBalance").addEventListener('click', function(){
+    checkBalance(publicKey);
+})
 
+//functions:
 function issueNewToken(){
     //disable button after pressing.
     document.getElementById("issueNewToken").disabled = true;
@@ -21,7 +27,8 @@ function checkBalance(publicKey){
     fetch(`https://ancient-headland-39950.herokuapp.com/api/getBalance/${publicKey}`)
         .then(res => { return res.json(); })
         .then(res => {
-            document.getElementById("showBalance").innerText = (`The balance for account ${publicKey}: ${res.balance}`);
+            console.log(res);
+            document.getElementById("showBalance").innerText = (`The balance for account ${publicKey}: ${res}`);
         })
         .catch(console.error)
 }
