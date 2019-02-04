@@ -10,7 +10,7 @@ document.getElementById("showBalanceButton").addEventListener('click', function(
 function issueNewToken(){
     //disable button after pressing.
     document.getElementById("issueNewToken").disabled = true;
-    document.getElementById("showToken").innerHTML="<img src='./assets/loading.gif' alt='loading img'>";
+    document.getElementById("showToken").innerHTML="<img src=assets/loading.gif>";
     //fetch the generated keys.
 
     fetch('https://ancient-headland-39950.herokuapp.com/api/newUser')
