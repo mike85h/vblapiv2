@@ -48,4 +48,8 @@ button {
 div {
     height: 5hv;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
