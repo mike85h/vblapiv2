@@ -10,8 +10,9 @@ document.getElementById("showBalanceButton").addEventListener('click', function(
 function issueNewToken(){
     //disable button after pressing.
     document.getElementById("issueNewToken").disabled = true;
-    document.getElementById("showToken").innerHTML="<img src='./assets/loading.gif' />";
+    document.getElementById("showToken").innerHTML="<img src='./assets/loading.gif' alt='loading img'>";
     //fetch the generated keys.
+
     fetch('https://ancient-headland-39950.herokuapp.com/api/newUser')
         .then(res => { return res.json(); })
         .then(res => {
@@ -22,6 +23,7 @@ function issueNewToken(){
             document.getElementById("showToken").innerText = (`Account Created!
                 Your public key is: ${publicKey}`);
         })
+
 }
 
 function checkBalance(publicKey){
